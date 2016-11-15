@@ -41,11 +41,11 @@ import React from 'react';
     render() {
       return (
         <tr>
-          <td style={{border: "1px solid black"}}>
+          <td style={{border: style.tableContent.border}}>
             <input type="checkbox" checked={this.state.checked} onChange={this.handleChange.bind(this)}/>
           </td>
-          <td style={{border: "1px solid black"}}>{this.props.title}</td>
-          <td style={{border: "1px solid black"}}>{this.props.children}</td>
+          <td style={{border: style.tableContent.border}}>{this.props.title}</td>
+          <td style={{border: style.tableContent.border}}>{this.props.children}</td>
         </tr>
       );
     }
@@ -53,7 +53,6 @@ import React from 'react';
   Todo.propTypes = {
     title: React.PropTypes.string.isRequired
   };
-
 
   class TodoForm extends React.Component {
     // Write code here
@@ -63,5 +62,11 @@ import React from 'react';
           I am a TodoForm.
         </div>
       );
+    }
+  }
+
+  let style = {
+    tableContent: {
+      border: "1px solid black"
     }
   }
